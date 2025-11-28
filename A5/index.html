@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Grid Responsiva</title>
+    <style>
+        :root {
+            --light: #da38da;
+            --medium: #a80ea8;
+            --dark: #560156;
+        }
+
+        .light {
+            background: var(--light);
+        }
+
+        .medium {
+            background: var(--medium);
+        }
+
+        .dark {
+            background: var(--dark);
+        }
+
+        .container {
+            width: 90vw;
+            margin: 0 auto;
+        }
+
+        .container-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: repeat(auto-fit, 100px);
+            gap: 2rem;
+            grid-template-areas:
+                    "a a a a a a a a a a a a"
+                    "a a a a a a a a a a a a"
+                    "a a a a a a a a a a a a"
+                    "b b b b c c c c d d d d"
+                    "e e e e e e f f f f f f"
+                    "g g g h h h h h h i i i"
+                    "j j j k k k l l l l l l"
+                    "m m m m m m n n n o o o";
+        }
+
+        .smaller {
+            max-height: 80px !important;
+            min-height: 80px !important;
+            height: 80px !important;
+        }
+
+        .container-grid > div {
+            min-height: 100px;
+            height: 100%;
+        }
+
+        .mb {
+            margin-bottom: 1rem;
+        }
+
+        .mt {
+            margin-top: 1rem;
+        }
+
+        .a {
+            grid-area: a;
+            height: 300px !important;
+        }
+
+        .b {
+            grid-area: b;
+        }
+
+        .c {
+            grid-area: c;
+        }
+
+        .d {
+            grid-area: d;
+        }
+
+        .e {
+            grid-area: e;
+        }
+
+        .f {
+            grid-area: f;
+        }
+
+        .g {
+            grid-area: g;
+        }
+
+        .h {
+            grid-area: h;
+        }
+
+        .i {
+            grid-area: i;
+        }
+
+        .j {
+            grid-area: j;
+        }
+
+        .k {
+            grid-area: k;
+        }
+
+        .l {
+            grid-area: l;
+        }
+
+        .m {
+            grid-area: m;
+        }
+
+        .n {
+            grid-area: n;
+        }
+
+        .o {
+            grid-area: o;
+        }
+
+        @media screen and (max-width: 768px) {
+            .container-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-areas:
+                    "a a"
+                    "a a"
+                    "a a"
+                    "b c"
+                    "d d"
+                    "e e"
+                    "f f"
+                    "g i"
+                    "h h"
+                    "j k"
+                    "l l"
+                    "n o"
+                    "m m";
+            }
+        }
+
+        @media screen and (max-width: 576px) {
+            .container-grid {
+                grid-template-columns: 1fr;
+                grid-template-areas:
+                "a"
+                "a"
+                "a"
+                "b"
+                "c"
+                "d"
+                "e"
+                "f"
+                "g"
+                "i"
+                "h"
+                "j"
+                "k"
+                "l"
+                "n"
+                "o"
+                "m";
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="container-grid">
+        <div class="a dark mb"></div>
+        <!--        row-->
+        <div class="b medium smaller"></div>
+        <div class="c medium smaller"></div>
+        <div class="d medium smaller"></div>
+        <!--        two cols-->
+        <div class="e dark mb"></div>
+        <div class="f dark mb"></div>
+        <!--        spacing-->
+        <div class="g light mt"></div>
+        <div class="h dark mt"></div>
+        <div class="i light mt"></div>
+        <!--        spacing-->
+        <div class="j light"></div>
+        <div class="k light"></div>
+        <div class="l dark"></div>
+        <!--        spacing-->
+        <div class="m dark"></div>
+        <div class="n light"></div>
+        <div class="o light"></div>
+    </div>
+</div>
+</body>
+</html>

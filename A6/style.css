@@ -1,0 +1,42 @@
+.box {
+    width:280px;
+    height:280px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family: "Inconsolata", monospace;
+    font-size: 28px;
+    border:1px solid #c39f76;
+    box-sizing:border-box;
+}
+
+/*
+    YOUR CODE GOES HERE
+ */
+
+.box{
+    border-width: 40px;
+    position: relative;
+}
+
+.box::after{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%);
+    width: 500px;
+    height: 80px;
+    border-radius: 50%;
+    background: white;
+    animation: rotate infinite 2s linear;
+    transform-origin: left;
+}
+@keyframes rotate {
+    from{
+        transform: translateY(-50%) rotate(0deg);
+    }
+    to{
+        transform: translateY(-50%) rotate(360deg);
+    }
+}

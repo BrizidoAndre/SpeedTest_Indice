@@ -1,0 +1,87 @@
+@font-face {
+    font-family: 'Saira Extra Condensed';
+    src: url("./font.ttf");
+}
+
+body, html {
+
+}
+
+body {
+    background: #12171b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+* {
+    position: relative;
+}
+
+.spacer {
+    height: 60vh;
+}
+
+h1 {
+
+}
+
+.rotatingHeader {
+    width: fit-content;
+    white-space: nowrap;
+    padding-bottom: 20px;
+}
+
+.rotatingHeader h1 {
+    font-family: 'Saira Extra Condensed', sans-serif;
+    color: #444;
+    font-size: clamp(40px, 10vw, 200px);
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+
+    perspective: 600px;
+}
+
+.rotatingHeader h1:nth-child(2) {
+    color: #efefef;
+}
+
+/**
+  YOUR CODE GOES HERE
+ */
+
+h1 {
+    display: flex;
+}
+
+.container-letter {
+    position: relative;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    display: flex;
+    flex-direction: column;
+    transition: .4s;
+}
+
+.reference {
+    opacity: 0;
+}
+
+.container-letter .animation {
+    position: absolute;
+    backface-visibility: hidden;
+    transition: .4s;
+}
+
+.bottom {
+    opacity: 1;
+    color: white;
+    transform: rotateX(-90deg) translateZ(50px) translateY(20px);
+}
+
+h1:hover .container-letter {
+    transform: rotateX(90deg);
+}
